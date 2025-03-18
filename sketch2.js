@@ -2,10 +2,6 @@ let fishes = []
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
-  
-  for (let i = 0; i < 5; i++) {
-    fishes.push(createFish(random(width), random(height)))
-  }
 }
 
 function draw() {

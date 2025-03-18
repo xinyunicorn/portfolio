@@ -1,20 +1,5 @@
 let eyes = []
 
-function setup() {
-  createCanvas(windowWidth, windowHeight)
-}
-
-function draw() {
-  for (let i = 0; i < eyes.length; i++) {
-    eyes[i].update(mouseX, mouseY)
-    eyes[i].show()
-  }
-}
-
-function mousePressed() {
-  eyes.push(new Eye(mouseX, mouseY, random(30, 70)))
-}
-
 class Eye {
   constructor(x, y, size) {
     this.x = x
@@ -35,4 +20,19 @@ class Eye {
     fill(0)
     ellipse(this.pupilX, this.pupilY, this.size * 0.5)
   }
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight)
+}
+
+function draw() {
+  for (let i = 0; i < eyes.length; i++) {
+    eyes[i].update(mouseX, mouseY)
+    eyes[i].show()
+  }
+}
+
+function mousePressed() {
+  eyes.push(new Eye(mouseX, mouseY, random(30, 70)))
 }
